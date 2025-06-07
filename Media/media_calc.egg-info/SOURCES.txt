@@ -1,4 +1,4 @@
-README.txt
+README.md
 setup.py
 media/__init__.py
 media/funciones.py

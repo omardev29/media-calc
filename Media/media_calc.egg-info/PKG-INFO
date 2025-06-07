@@ -1,13 +1,11 @@
 Metadata-Version: 2.4
 Name: media-calc
-Version: 0.2.2
+Version: 0.2.5
 Summary: A comprehensive Python library for statistical calculations including mean, median, mode, variance, and standard deviation
 Author: Omardev29
 Author-email: omaroficial365@gmail.com
 License: MIT
 Project-URL: Source Code, https://github.com/omardev29/media-calc
-Project-URL: Bug Tracker, https://github.com/omardev29/media-calc/issues
-Project-URL: Documentation, https://github.com/omardev29/media-calc#readme
 Keywords: mathematics,statistics,average,mean,calculator,median,mode,variance,standard deviation,data analysis
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Developers

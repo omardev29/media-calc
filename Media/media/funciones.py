@@ -13,7 +13,7 @@ def media(lista):
         return 0
     return sum(lista) / len(lista)
 
-def mediana(lista):
+def median(lista):
     """
     Returns the median of a list of numbers.
     
@@ -32,7 +32,7 @@ def mediana(lista):
         return (sorted_list[mid-1] + sorted_list[mid]) / 2
     return sorted_list[mid]
 
-def moda(lista):
+def mode(lista):
     """
     Returns the mode (most frequent value) of a list of numbers.
     
@@ -48,7 +48,7 @@ def moda(lista):
     count = Counter(lista)
     return max(count.items(), key=lambda x: x[1])[0]
 
-def varianza(lista):
+def variance(lista):
     """
     Returns the variance of a list of numbers.
     
@@ -63,7 +63,7 @@ def varianza(lista):
     med = media(lista)
     return sum((x - med) ** 2 for x in lista) / len(lista)
 
-def desviacion_estandar(lista):
+def standard_deviation(lista):
     """
     Returns the standard deviation of a list of numbers.
     
@@ -74,4 +74,4 @@ def desviacion_estandar(lista):
         float: The standard deviation of the list, or 0 if the list is empty
     """
     from math import sqrt
-    return sqrt(varianza(lista))
+    return sqrt(variance(lista))

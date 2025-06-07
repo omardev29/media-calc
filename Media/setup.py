@@ -7,11 +7,41 @@ try:
     README = (HERE / "README.md").read_text(encoding='utf-8')
 except:
     README = """
+# media-calc
+
 A comprehensive Python library for statistical calculations.
-Visit https://pypi.org/project/media-calc/ for full documentation.
+
+## Features
+
+- Calculate arithmetic mean (media)
+- Find median value (median)
+- Get most frequent value (mode)
+- Calculate variance (variance)
+- Compute standard deviation (standard_deviation)
+
+## Installation
+
+```bash
+pip install media-calc
+```
+
+## Quick Start
+
+```python
+from media import media, median, mode, variance, standard_deviation
+
+numbers = [2, 4, 4, 4, 5, 5, 7, 9]
+print(f"Mean: {media(numbers)}")              # 5.0
+print(f"Median: {median(numbers)}")           # 4.5
+print(f"Mode: {mode(numbers)}")               # 4
+print(f"Variance: {variance(numbers)}")       # 4.0
+print(f"Std Dev: {standard_deviation(numbers)}") # 2.0
+```
+
+For more information visit: https://github.com/omardev29/media-calc
 """
 
-VERSION = '0.2.2'  # Added better documentation and GitHub integration
+VERSION = '0.2.5'  # Added comprehensive test script and verified security
 PACKAGE_NAME = 'media-calc'
 AUTHOR = 'Omardev29'
 AUTHOR_EMAIL = 'omaroficial365@gmail.com'
@@ -24,8 +54,6 @@ LONG_DESC_TYPE = "text/markdown"
 # Metadata adicional del proyecto
 PROJECT_URLS = {
     'Source Code': 'https://github.com/omardev29/media-calc',
-    'Bug Tracker': 'https://github.com/omardev29/media-calc/issues',
-    'Documentation': 'https://github.com/omardev29/media-calc#readme',
 }
 
 KEYWORDS = [

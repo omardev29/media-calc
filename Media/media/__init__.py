@@ -1,19 +1,19 @@
 from .funciones import (
     media,
-    mediana,
-    moda,
-    varianza,
-    desviacion_estandar
+    median,
+    mode,
+    variance,
+    standard_deviation
 )
 
-__version__ = '0.2.1'
+__version__ = '0.2.5'
 
 __all__ = [
     'media',
-    'mediana',
-    'moda',
-    'varianza',
-    'desviacion_estandar'
+    'median',
+    'mode',
+    'variance',
+    'standard_deviation'
 ]
 
 
