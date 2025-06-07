@@ -11,22 +11,35 @@ A comprehensive Python library for statistical calculations.
 Visit https://pypi.org/project/media-calc/ for full documentation.
 """
 
-VERSION = '0.2.1'  # Added new statistical functions
-PACKAGE_NAME = 'media-calc'  # Changed to avoid conflicts with existing packages
+VERSION = '0.2.2'  # Added better documentation and GitHub integration
+PACKAGE_NAME = 'media-calc'
 AUTHOR = 'Omardev29'
 AUTHOR_EMAIL = 'omaroficial365@gmail.com'
 
 LICENSE = 'MIT'
-DESCRIPTION = 'An efficient Python library for calculating the arithmetic mean of a list of numbers'
+DESCRIPTION = 'A comprehensive Python library for statistical calculations including mean, median, mode, variance, and standard deviation'
 LONG_DESCRIPTION = README
 LONG_DESC_TYPE = "text/markdown"
 
 # Metadata adicional del proyecto
 PROJECT_URLS = {
-   #No hay por ahora
+    'Source Code': 'https://github.com/omardev29/media-calc',
+    'Bug Tracker': 'https://github.com/omardev29/media-calc/issues',
+    'Documentation': 'https://github.com/omardev29/media-calc#readme',
 }
 
-KEYWORDS = ['mathematics', 'statistics', 'average', 'mean', 'calculator']
+KEYWORDS = [
+    'mathematics',
+    'statistics',
+    'average',
+    'mean',
+    'calculator',
+    'median',
+    'mode',
+    'variance',
+    'standard deviation',
+    'data analysis'
+]
 CLASSIFIERS = [
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',

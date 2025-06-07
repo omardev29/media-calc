@@ -1,15 +1,22 @@
 # media-calc
 
-A comprehensive Python library for statistical calculations.
+[![PyPI version](https://badge.fury.io/py/media-calc.svg)](https://badge.fury.io/py/media-calc)
+[![Python Versions](https://img.shields.io/pypi/pyversions/media-calc.svg)](https://pypi.org/project/media-calc/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A comprehensive Python library for statistical calculations. Simple, efficient, and easy to use.
 
 ## Description
 
-This library provides a set of robust statistical functions for data analysis. It's ideal for:
+This library provides a set of robust statistical functions for data analysis. Perfect for students, researchers, and data analysts who need quick and reliable statistical calculations.
+
+### Key Features
 - Basic and advanced statistical analysis
-- Data processing and exploration
-- Educational projects
-- Mathematical calculations
-- Research and analysis
+- Clean and intuitive API
+- Comprehensive documentation
+- No external dependencies
+- Efficient calculations
+- Handles empty lists gracefully
 
 ## Installation
 

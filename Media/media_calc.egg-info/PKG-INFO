@@ -1,11 +1,14 @@
 Metadata-Version: 2.4
 Name: media-calc
-Version: 0.2.1
-Summary: An efficient Python library for calculating the arithmetic mean of a list of numbers
+Version: 0.2.2
+Summary: A comprehensive Python library for statistical calculations including mean, median, mode, variance, and standard deviation
 Author: Omardev29
 Author-email: omaroficial365@gmail.com
 License: MIT
-Keywords: mathematics,statistics,average,mean,calculator
+Project-URL: Source Code, https://github.com/omardev29/media-calc
+Project-URL: Bug Tracker, https://github.com/omardev29/media-calc/issues
+Project-URL: Documentation, https://github.com/omardev29/media-calc#readme
+Keywords: mathematics,statistics,average,mean,calculator,median,mode,variance,standard deviation,data analysis
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
@@ -23,21 +26,29 @@ Dynamic: description
 Dynamic: description-content-type
 Dynamic: keywords
 Dynamic: license
+Dynamic: project-url
 Dynamic: requires-python
 Dynamic: summary
 
 # media-calc
 
-A comprehensive Python library for statistical calculations.
+[![PyPI version](https://badge.fury.io/py/media-calc.svg)](https://badge.fury.io/py/media-calc)
+[![Python Versions](https://img.shields.io/pypi/pyversions/media-calc.svg)](https://pypi.org/project/media-calc/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A comprehensive Python library for statistical calculations. Simple, efficient, and easy to use.
 
 ## Description
 
-This library provides a set of robust statistical functions for data analysis. It's ideal for:
+This library provides a set of robust statistical functions for data analysis. Perfect for students, researchers, and data analysts who need quick and reliable statistical calculations.
+
+### Key Features
 - Basic and advanced statistical analysis
-- Data processing and exploration
-- Educational projects
-- Mathematical calculations
-- Research and analysis
+- Clean and intuitive API
+- Comprehensive documentation
+- No external dependencies
+- Efficient calculations
+- Handles empty lists gracefully
 
 ## Installation
 
