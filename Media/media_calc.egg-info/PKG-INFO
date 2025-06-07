@@ -1,0 +1,100 @@
+Metadata-Version: 2.4
+Name: media-calc
+Version: 0.2.1
+Summary: An efficient Python library for calculating the arithmetic mean of a list of numbers
+Author: Omardev29
+Author-email: omaroficial365@gmail.com
+License: MIT
+Keywords: mathematics,statistics,average,mean,calculator
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
+
+# media-calc
+
+A comprehensive Python library for statistical calculations.
+
+## Description
+
+This library provides a set of robust statistical functions for data analysis. It's ideal for:
+- Basic and advanced statistical analysis
+- Data processing and exploration
+- Educational projects
+- Mathematical calculations
+- Research and analysis
+
+## Installation
+
+```bash
+pip install media-calc
+```
+
+## Usage
+
+```python
+from media import (
+    media, 
+    mediana, 
+    moda, 
+    varianza, 
+    desviacion_estandar
+)
+
+# Sample data
+numbers = [2, 4, 4, 4, 5, 5, 7, 9]
+
+# Calculate basic statistics
+print(f"Mean: {media(numbers)}")          # Output: 5.0
+print(f"Median: {mediana(numbers)}")      # Output: 4.5
+print(f"Mode: {moda(numbers)}")           # Output: 4
+print(f"Variance: {varianza(numbers)}")   # Output: 4.0
+print(f"Std Dev: {desviacion_estandar(numbers)}")  # Output: 2.0
+```
+
+## Available Functions
+
+### Basic Statistics
+- `media(lista)`: Calculate arithmetic mean of a list of numbers
+- `mediana(lista)`: Find the middle value of a sorted list
+- `moda(lista)`: Find the most frequent value
+
+### Advanced Statistics
+- `varianza(lista)`: Calculate the variance of the data
+- `desviacion_estandar(lista)`: Calculate the standard deviation
+
+### Empty List Handling
+All functions handle empty lists gracefully:
+- `media()`: returns 0
+- `mediana()`: returns 0
+- `moda()`: returns None
+- `varianza()`: returns 0
+- `desviacion_estandar()`: returns 0
+
+### Version Information
+You can check the current version of the library:
+```python
+import media
+print(media.__version__)  # Shows current version
+```
+
+# 2.0: more funcioanalities added
+# 2.1: better documentation
+## License
+
+This project is licensed under the MIT License.
