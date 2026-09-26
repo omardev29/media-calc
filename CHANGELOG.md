@@ -2,16 +2,21 @@
 
 ## 0.3.0
 
+### Breaking changes
+
+- The whole API is now in English. `media` was renamed to `mean`, and the
+  internal module `media.funciones` was renamed to `media.functions`. The
+  first parameter of every function is now called `data` (was `lista`).
+
 ### Fixed
 
 - The README documented `mediana`, `moda`, `varianza` and
-  `desviacion_estandar`, but the package only exported `median`, `mode`,
-  `variance` and `standard_deviation`, so the README example failed with
-  `ImportError`. Both sets of names are now exported.
+  `desviacion_estandar`, which never existed, so the README example failed
+  with `ImportError`. The README now matches the real API.
 - Passing a generator or other iterator no longer fails or gives wrong
-  results (for example `varianza` used to read its input twice).
-- `media` and the variances use `math.fsum`, so results no longer drift from
-  accumulated rounding (`media([0.1] * 10)` now returns `0.1`, not
+  results (for example `variance` used to read its input twice).
+- `mean` and the variances use `math.fsum`, so results no longer drift from
+  accumulated rounding (`mean([0.1] * 10)` now returns `0.1`, not
   `0.09999999999999999`).
 - Non-numeric values raise a clear `TypeError` instead of failing somewhere
   inside the calculation.
@@ -19,11 +24,9 @@
 
 ### Added
 
-- `varianza_muestral` / `sample_variance` and
-  `desviacion_estandar_muestral` / `sample_standard_deviation`
-  (sample statistics, divide by `n - 1`).
-- `modas` / `multimode`, which returns every most frequent value.
-- `mean` alias for `media`.
+- `sample_variance` and `sample_standard_deviation` (sample statistics,
+  divide by `n - 1`).
+- `multimode`, which returns every most frequent value.
 - Type hints and a `py.typed` marker.
 - Test suite and GitHub Actions workflows for tests and PyPI releases.
 
