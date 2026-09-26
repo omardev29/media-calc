@@ -4,8 +4,8 @@ from fractions import Fraction
 
 import pytest
 
-import media
-from media import (
+import media_calc
+from media_calc import (
     mean,
     median,
     mode,
@@ -20,7 +20,7 @@ DATA = [2, 4, 4, 4, 5, 5, 7, 9]
 
 
 def test_version():
-    assert media.__version__ == "0.3.0"
+    assert media_calc.__version__ == "0.3.0"
 
 
 def test_readme_example():
@@ -158,7 +158,7 @@ def test_rejects_non_numeric_values(func, value):
 
 
 def test_import_from_functions_module():
-    from media.functions import mean, median, mode, standard_deviation, variance
+    from media_calc.functions import mean, median, mode, standard_deviation, variance
 
     assert mean(DATA) == 5.0
     assert median(DATA) == 4.5
@@ -168,5 +168,5 @@ def test_import_from_functions_module():
 
 
 def test_all_exports_existing_callables():
-    for name in media.__all__:
-        assert callable(getattr(media, name))
+    for name in media_calc.__all__:
+        assert callable(getattr(media_calc, name))

@@ -31,4 +31,4 @@ jobs:
         run: |
           python -m venv /tmp/venv
           /tmp/venv/bin/pip install dist/*.whl
-          cd /tmp && /tmp/venv/bin/python -c "from media import mean, median; print(mean([1, 2, 3]), median([1, 2, 3]))"
+          cd /tmp && /tmp/venv/bin/python -c "from media_calc import mean, median; print(mean([1, 2, 3]), median([1, 2, 3]))"

@@ -23,12 +23,12 @@ uv add media-calc          # add it as a dependency of your uv project
 uv pip install media-calc  # or install it into the current environment
 ```
 
-The distribution is called `media-calc`, but the package you import is `media`.
+Install it as `media-calc` and import it as `media_calc`.
 
 ## Usage
 
 ```python
-from media import mean, median, mode, variance, standard_deviation
+from media_calc import mean, median, mode, variance, standard_deviation
 
 numbers = [2, 4, 4, 4, 5, 5, 7, 9]
 
@@ -89,8 +89,8 @@ somewhere inside the calculation.
 ### Version
 
 ```python
-import media
-print(media.__version__)
+import media_calc
+print(media_calc.__version__)
 ```
 
 ## Development

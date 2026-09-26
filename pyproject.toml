@@ -51,13 +51,13 @@ Changelog = "https://github.com/omardev29/media-calc/blob/main/CHANGELOG.md"
 dev = ["pytest>=7"]
 
 [tool.hatch.version]
-path = "src/media/__init__.py"
+path = "src/media_calc/__init__.py"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/media"]
+packages = ["src/media_calc"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src/media", "tests", "README.md", "CHANGELOG.md", "LICENSE"]
+include = ["src/media_calc", "tests", "README.md", "CHANGELOG.md", "LICENSE"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -4,9 +4,11 @@
 
 ### Breaking changes
 
-- The whole API is now in English. `media` was renamed to `mean`, and the
-  internal module `media.funciones` was renamed to `media.functions`. The
-  first parameter of every function is now called `data` (was `lista`).
+- The import package was renamed from `media` to `media_calc`
+  (`import media_calc`), matching the distribution name.
+- The whole API is now in English. The `media` function was renamed to
+  `mean`, and the internal module `funciones` was renamed to `functions`.
+  The first parameter of every function is now called `data` (was `lista`).
 
 ### Fixed
 
