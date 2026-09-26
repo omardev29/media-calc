@@ -1,0 +1,23 @@
+name: Publish to PyPI
+
+# Runs when a GitHub release is published (e.g. tag v0.3.0).
+# Uses PyPI trusted publishing, so no API token is stored in the repo.
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Run tests
+        run: uv run --group dev pytest
+      - name: Build
+        run: uv build
+      - name: Publish
+        run: uv publish

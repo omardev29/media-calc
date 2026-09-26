@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "media-calc"
+dynamic = ["version"]
+description = "Simple, dependency-free statistics: mean, median, mode, variance and standard deviation"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Omardev29", email = "omaroficial365@gmail.com" }]
+keywords = [
+    "mathematics",
+    "statistics",
+    "average",
+    "mean",
+    "median",
+    "mode",
+    "variance",
+    "standard deviation",
+    "data analysis",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/omardev29/media-calc"
+Source = "https://github.com/omardev29/media-calc"
+Issues = "https://github.com/omardev29/media-calc/issues"
+Changelog = "https://github.com/omardev29/media-calc/blob/main/CHANGELOG.md"
+
+[dependency-groups]
+dev = ["pytest>=7"]
+
+[tool.hatch.version]
+path = "src/media/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/media"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/media", "tests", "README.md", "CHANGELOG.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-ra", "--strict-markers"]

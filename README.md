@@ -1,79 +1,129 @@
 # media-calc
 
-[![PyPI version](https://badge.fury.io/py/media-calc.svg)](https://badge.fury.io/py/media-calc)
+[![PyPI version](https://img.shields.io/pypi/v/media-calc.svg)](https://pypi.org/project/media-calc/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/media-calc.svg)](https://pypi.org/project/media-calc/)
+[![Tests](https://github.com/omardev29/media-calc/actions/workflows/tests.yml/badge.svg)](https://github.com/omardev29/media-calc/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A comprehensive Python library for statistical calculations. Simple, efficient, and easy to use.
-
-## Description
-
-This library provides a set of robust statistical functions for data analysis. Perfect for students, researchers, and data analysts who need quick and reliable statistical calculations.
-
-### Key Features
-- Basic and advanced statistical analysis
-- Clean and intuitive API
-- Comprehensive documentation
-- No external dependencies
-- Efficient calculations
-- Handles empty lists gracefully
+A small, dependency-free Python library for basic statistics: mean, median,
+mode, variance and standard deviation. Function names are in Spanish, with
+English aliases for every one of them.
 
 ## Installation
+
+With **pip**:
 
 ```bash
 pip install media-calc
 ```
 
+With **uv**:
+
+```bash
+uv add media-calc          # add it as a dependency of your uv project
+uv pip install media-calc  # or install it into the current environment
+```
+
+The distribution is called `media-calc`, but the package you import is `media`.
+
 ## Usage
 
 ```python
-from media import (
-    media, 
-    mediana, 
-    moda, 
-    varianza, 
-    desviacion_estandar
-)
+from media import media, mediana, moda, varianza, desviacion_estandar
 
-# Sample data
 numbers = [2, 4, 4, 4, 5, 5, 7, 9]
 
-# Calculate basic statistics
-print(f"Mean: {media(numbers)}")          # Output: 5.0
-print(f"Median: {mediana(numbers)}")      # Output: 4.5
-print(f"Mode: {moda(numbers)}")           # Output: 4
-print(f"Variance: {varianza(numbers)}")   # Output: 4.0
-print(f"Std Dev: {desviacion_estandar(numbers)}")  # Output: 2.0
+print(media(numbers))                # 5.0
+print(mediana(numbers))              # 4.5
+print(moda(numbers))                 # 4
+print(varianza(numbers))             # 4.0
+print(desviacion_estandar(numbers))  # 2.0
 ```
 
-## Available Functions
+The same code with the English aliases:
 
-### Basic Statistics
-- `media(lista)`: Calculate arithmetic mean of a list of numbers
-- `mediana(lista)`: Find the middle value of a sorted list
-- `moda(lista)`: Find the most frequent value
+```python
+from media import mean, median, mode, variance, standard_deviation
+```
 
-### Advanced Statistics
-- `varianza(lista)`: Calculate the variance of the data
-- `desviacion_estandar(lista)`: Calculate the standard deviation
+Every function accepts any iterable of numbers (lists, tuples, `range`,
+generators...), not only lists.
 
-### Empty List Handling
-All functions handle empty lists gracefully:
-- `media()`: returns 0
-- `mediana()`: returns 0
-- `moda()`: returns None
-- `varianza()`: returns 0
-- `desviacion_estandar()`: returns 0
+## Available functions
 
-### Version Information
-You can check the current version of the library:
+| Spanish                           | English alias                    | Description                                                      |
+| --------------------------------- | -------------------------------- | ---------------------------------------------------------------- |
+| `media(lista)`                    | `mean`                           | Arithmetic mean                                                  |
+| `mediana(lista)`                  | `median`                         | Middle value (average of the two middle values if the count is even) |
+| `moda(lista)`                     | `mode`                           | Most frequent value (the first one seen, on ties)                |
+| `modas(lista)`                    | `multimode`                      | All the most frequent values, in order of appearance            |
+| `varianza(lista)`                 | `variance`                       | Population variance (divides by `n`)                             |
+| `varianza_muestral(lista)`        | `sample_variance`                | Sample variance (divides by `n - 1`)                             |
+| `desviacion_estandar(lista)`      | `standard_deviation`             | Population standard deviation                                    |
+| `desviacion_estandar_muestral(lista)` | `sample_standard_deviation`  | Sample standard deviation                                        |
+
+`moda` and `modas` work with any hashable values, so they can also be used
+with non-numeric data:
+
+```python
+moda(["red", "blue", "red"])   # 'red'
+modas([1, 2, 2, 3, 3])          # [2, 3]
+```
+
+### Population vs. sample
+
+`varianza` and `desviacion_estandar` treat the data as the whole population.
+If your data is a sample of a bigger population, use `varianza_muestral` and
+`desviacion_estandar_muestral`:
+
+```python
+varianza(numbers)            # 4.0
+varianza_muestral(numbers)   # 4.571428571428571
+```
+
+### Empty input and invalid values
+
+Empty input never raises:
+
+- `media`, `mediana`, `varianza`, `desviacion_estandar` and their sample
+  versions return `0.0` (the variances also return `0.0` for a single value).
+- `moda` returns `None` and `modas` returns `[]`.
+
+Passing something that is not a number (for example `"3"` or `None`) to a
+numeric function raises `TypeError` with a clear message, instead of failing
+somewhere inside the calculation.
+
+### Version
+
 ```python
 import media
-print(media.__version__)  # Shows current version
+print(media.__version__)
 ```
 
-# 2.0: more funcioanalities added
-# 2.1: better documentation
+## Development
+
+The project uses a standard `pyproject.toml`, so it works with both uv and
+pip.
+
+With uv:
+
+```bash
+uv sync          # create .venv and install the package + dev dependencies
+uv run pytest    # run the tests
+uv build         # build the sdist and wheel into dist/
+```
+
+With pip:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate      # on Windows: .venv\Scripts\activate
+pip install -e . pytest
+pytest
+```
+
+See [CHANGELOG.md](CHANGELOG.md) for the release history.
+
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
